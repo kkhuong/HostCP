@@ -18,20 +18,20 @@ The `master` branch contains the latest code that has been written. It is regula
 
 Testing
 -------
-ZeroCP is still in the pre-development phrase. However, we will occasionally write unit tests for ZeroCP.
+ZeroCP is still in the pre-development phrase. However, we will occasionally write new [tests](test/) for ZeroCP.
 
 ### Unit Tests
 
-[Unit tests](src/test/) for new code, will be added as needed. Unit tests can be compiled and run
+Unit test for new code, will be added as needed. Unit tests can be compiled and run
 (assuming they weren't disabled in configure) with: `make check`.
 
 ### Integration Tests
 
-There are also [integration tests](/test), written
+There are also integration tests, written
 in Python, that are run automatically on the build server.
 
 The Travis CI system makes sure that every push to the `master` branch is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
 
 Implementation Remarks
 ----------------------
-We realized that the web application will be heavily accessed by multiple WSO simutaneously. Web applications are usually implemented in interpreted languages; which lacks compiler optimizations before it is deployed and running. Therefore, we are implementing our web applications in PHP, instead of Node.js or Ruby, so that they can be compiled and optimized by Zend Guard.
+We realized that the web application will be heavily accessed by multiple WSO simultaneously. Web applications are usually implemented in interpreted languages; which lacks compiler optimizations before it is deployed and running. Therefore, we are implementing our web applications in PHP, instead of Node.js or Ruby, so that they can be compiled and optimized by Zend Guard.
