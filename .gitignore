@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Linux / Mac
+*.*swp
+*.*nfs
+.DS_Store
+
