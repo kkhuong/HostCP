@@ -1,0 +1,14 @@
+sudo: enabled
+dist: trusty
+os: linux
+language: generic
+
+before_install:
+  - sh install-dependencies.sh
+
+install:
+  - cd src/
+  - make
+
+after_install:
+  - make clean
