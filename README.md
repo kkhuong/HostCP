@@ -7,7 +7,14 @@ Zeroeth Control Panel, or ZeroCP, is an online web hosting control panel that pr
 
 To-Do
 -----
-- [ ] Build a simple web UI for end users and server admins at port 2082 and 2086, respectively in PHP
+- [ ] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
+- [ ] Throw away C++ code
+- [ ] Create new Rails app
+- [ ] Install Postgres SQL. Setup the database and have the Rails app make use of that
+- [ ] Update Travis CI configuration to reflect our changes
+- [ ] Get the app to take in simple commands to create new Unix user
+- [ ] Write a simple test to check if number of users is 1 after the first insert
+- [ ] Update Travis CI configuration to reflect our changes
 - [X] Learn how to work with sockets to open up a port
 
 
@@ -34,4 +41,4 @@ The Travis CI system makes sure that every push to the `master` branch is built 
 
 Implementation Remarks
 ----------------------
-We realized that the web application will be heavily accessed by multiple WSO simultaneously. Web applications are usually implemented in interpreted languages; which lacks compiler optimizations before it is deployed and running. Therefore, we are implementing our web applications in PHP, instead of Node.js or Ruby, so that they can be compiled and optimized by Zend Guard.
+ZeroCP is a sysadmin software. As a result, we are using Ruby to implement the API system that will be installed on shared hosting servers. The so-called API system will take commands through HTTPS and perform sysadmin tasks directly on the server. This system will also feature a file manager for direct file uploading. Note that the entire system does not have an UI; it will be built separately.
