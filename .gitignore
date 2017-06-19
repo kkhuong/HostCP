@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+zerocp-cli
 
 # Linux / Mac
 *.*swp
