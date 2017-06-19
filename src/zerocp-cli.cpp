@@ -2,6 +2,6 @@
 #include "functions.h"
 
 int main() {
-    print_welcome();
+    dprint_welcome();
     return 0;
 }
