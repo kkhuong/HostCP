@@ -4,6 +4,6 @@
 sh install-dependencies.sh
 
 # Setup skeleton for new users
-cp -r misc/skeleton/* /etc/skel/
+cp -r misc/skeleton/. /etc/skel/
 
 
