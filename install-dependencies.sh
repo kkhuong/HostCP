@@ -23,7 +23,7 @@ PATH=/opt/passenger-5.1.5/bin:$PATH
 export PATH
 
 # install rack
-/usr/bin/ruby2.3 /usr/bin/gem install rack
+gem install rack
 
 # figure out how to install passenger and insert code here
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx  --languages ruby,python,nodejs,meteor
