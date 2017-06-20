@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# install system dependencies
+sh install-dependencies.sh
+
+# Setup skeleton for new users
+cp -r misc/skeleton/* /etc/skel/
+
+
