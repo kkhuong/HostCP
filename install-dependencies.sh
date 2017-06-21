@@ -32,20 +32,10 @@ gem install bundler --no-rdoc --no-ri
 gem install rack  # required by passenger
 
 # INSTALL PASSENGER + NGINX
-wget http://acsweb.ucsd.edu/~kkhuong/passenger-5.1.5.tar.gz
-sudo tar -xzvf passenger-5.1.5.tar.gz -C /opt
-rm passenger-5.1.5.tar.gz
-
-sudo echo "" >> /etc/bash.bashrc
-sudo echo "# Passenger Path" >> /etc/bash.bashrc
-sudo echo "PATH=/opt/passenger-5.1.5/bin:$PATH" >> /etc/bash.bashrc
-sudo echo "export PATH" >> /etc/bash.bashrc
-sudo echo "" >> /etc/bash.bashrc
-
-PATH=/opt/passenger-5.1.5/bin:$PATH
-export PATH
-
+rvmsudo gem install passenger --no-rdoc --no-ri
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor
+
+
 
 # EOF
 # make admin user
