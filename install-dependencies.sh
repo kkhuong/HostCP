@@ -32,7 +32,7 @@ gem install bundler --no-rdoc --no-ri
 gem install rack  # required by passenger
 
 # INSTALL PASSENGER + NGINX
-rvmsudo gem install passenger --no-rdoc --no-ri
+gem install passenger --no-rdoc --no-ri
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor
 
 
