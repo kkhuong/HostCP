@@ -25,8 +25,8 @@ sudo usermod -a -G rvm `whoami`
 if sudo grep -q secure_path /etc/sudoers; then sudo sh -c "echo export rvmsudo_secure_path=1 >> /etc/profile.d/rvm_secure_path.sh" && echo Environment variable installed; fi
 if sudo grep -q secure_path /etc/sudoers; then export rvmsudo_secure_path=1; fi
 
-rvm install ruby-2.3.1
-rvm --default use ruby-2.3.1
+rvm install ruby-2.3.3
+rvm --default use ruby-2.3.3
 
 gem install bundler --no-rdoc --no-ri
 gem install rack  # required by passenger
