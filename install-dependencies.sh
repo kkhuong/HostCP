@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo useradd -m -p $(openssl passwd -1 -salt SALT TEMP_PASSWORD) kkhuong
-sudo usermod -aG sudo kkhuong
+# sudo useradd -m -p $(openssl passwd -1 -salt SALT TEMP_PASSWORD) kkhuong
+# sudo usermod -aG sudo kkhuong
 # sudo echo "kkhuong ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.tmp
-sudo -u kkhuong bash << EOF
+# sudo -u kkhuong bash << EOF
 
 # INSTALL DEPENDENCIES
 sudo apt-get update
@@ -47,7 +47,7 @@ export PATH
 
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor
 
-EOF
+# EOF
 # make admin user
 # add admin user to rvm group: sudo usermod -a -G rvm USER
 # have the user install every single rubies
