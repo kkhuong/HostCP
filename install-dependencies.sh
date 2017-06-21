@@ -1,6 +1,7 @@
 #!/bin/bash
 useradd -m -p $(openssl passwd -1 -salt SALT TEMP_PASSWORD) -s /bin/bash kkhuong
 sudo usermod -a -G sudo kkhuong
+#sudo echo "kkhuong ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.tmp
 sudo -u kkhuong bash << EOF
 
 # INSTALL DEPENDENCIES
