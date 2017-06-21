@@ -16,6 +16,8 @@ sudo rm -rf /etc/nginx
 
 # INSTALL RVM
 \curl -sSL https://get.rvm.io | sudo bash -s -- --version latest
+source /etc/profile.d/rvm.sh
+/bin/bash --login
 
 # install some rubies and dependencies for Passenger here
 # ... we are commiting this change right now to see if we need to do something here
@@ -25,7 +27,7 @@ sudo usermod -a -G rvm `whoami`
 if sudo grep -q secure_path /etc/sudoers; then sudo sh -c "echo export rvmsudo_secure_path=1 >> /etc/profile.d/rvm_secure_path.sh" && echo Environment variable installed; fi
 if sudo grep -q secure_path /etc/sudoers; then export rvmsudo_secure_path=1; fi
 
-rvm install ruby-2.3.3
+rvm reinstall ruby-2.3.3
 rvm --default use ruby-2.3.3
 
 gem install bundler --no-rdoc --no-ri
