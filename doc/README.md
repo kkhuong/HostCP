@@ -7,6 +7,7 @@ Notes
 - have users automatically added to `rvm` group so they can use rvm
 - When you are done with setup procedures
   - This is the command to create a new user `useradd -m -p $(openssl passwd -1 -salt $SALT $PASS) -s /bin/bash $USER`. Please check if this command is secure (and truly zero knowledge before implementing) ***security concerns**
+- `https://www.phusionpassenger.com/library/indepth/ruby/multiple_rubies.html` for path. we need to do this to have passenger for every rubies
   
 - Our server only supports `ruby-2.3.3` for now. We should have a staff using `adminuser` to install every single rubies so that end-users can use any of them for their app.
 - Start looking into Node.js and PHP support. Python support will come later.
