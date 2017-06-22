@@ -4,7 +4,10 @@ os: linux
 language: generic
 
 install:
-  - sh install1.sh && /bin/bash --login && sh install2.sh && sh install3.sh
+  - sh install1.sh
+  - /bin/bash --login
+  - sh install2.sh
+  - sh install3.sh
   - cd src/
   - make
 
