@@ -27,3 +27,9 @@ Milestone 1.0 will consist of a API (JSON) system only. It will support these fe
   - For every app hosted, edit NGINX conf files `/opt/nginx/conf/nginx.conf` accordingly
   
 ** DNS will be handled by other providers for now
+
+Errors Encountered
+==================
+We managed to get a demo app (omrails) up and running. However, note that we have encountered many errors:
+- `development` environment is not the same as `production`. Ergo, something that may work with `passenger start` may not work. Encourage the customer to do `passenger start ...` to launch app as production before deploying for real because they do not have access to the error logs and the webpage does not show any error (unlike PHP in "development mode"). Example errors is that: syntax error on a production code but not on development code, production requires other software such as postgres (opposing sqlite for dev mode), `SECRET_KEY_BASE`
+- Most of the time, error stems from forgeting to set the `SECRET_KEY_BASE`. We shall declare `SECRET_KEY_BASE` as an environmental variable to reduce deployment errors. We should remind the customers to generate and set their own though.
