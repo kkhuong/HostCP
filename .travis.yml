@@ -7,6 +7,7 @@ install:
   - sh install1.sh
   - /bin/bash --login
   - sh install2.sh
+  - rvm --default use ruby-2.3.3
   - sh install3.sh
   - cd src/
   - make

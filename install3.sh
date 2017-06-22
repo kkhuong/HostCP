@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 # INSTALL PASSENGER + NGINX
 rvmsudo gem install passenger --no-rdoc --no-ri
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor

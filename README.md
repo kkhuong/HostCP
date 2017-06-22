@@ -5,6 +5,32 @@ Zeroeth Control Panel
 Zeroeth Control Panel, or ZeroCP, is an online web hosting control panel that provides a web-based GUI and automation tools to simplify the process of hosting a website or managing a shared web hosting server. It is designed to be a cPanel alternative for Debian based operating systems, particularly Ubuntu.
 
 
+How to setup
+------------
+Unfortunately, we do not have an one command installer. Therefore, to use this software, you will need to do the following
+
+- Login as `root`
+- `./install1.sh`  # this makes `kkhuong` with password `TEMP_PASSWORD`
+- Logout
+
+- Login as `kkhuong`
+- `./install1_1.sh`  # this install dependencies and rvm
+- Logout
+
+- Login as `kkhuong`
+- `./install2.sh`
+- Logout
+
+- Login as `adminuser` with password `TEMP_PASSWORD`
+- `rvm reinstall ruby-2.3.3`
+- `rvm --default use ruby-2.3.3`
+- `./install2_1.sh`
+- Logout
+
+- Login as `root`
+- `./install3.sh`
+- Logout
+
 To-Do
 -----
 - [ ] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
