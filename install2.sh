@@ -1,35 +1,17 @@
 #!/bin/bash
 
-# sudo useradd -m -p $(openssl passwd -1 -salt SALT TEMP_PASSWORD) -s /bin/bash kkhuong
-# sudo usermod -aG sudo kkhuong
-# sudo echo "kkhuong ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.tmp
-# sudo -u kkhuong bash << EOF
-
-# INSTALL DEPENDENCIES
-sudo apt-get update
-# sudo apt-get install -y make cmake g++ ruby rake libcurl4-openssl-dev libssl-dev zlib1g-dev ruby-dev nodejs
-sudo apt-get install -y make cmake g++ libcurl4-openssl-dev libssl-dev zlib1g-dev nodejs
-sudo ln -sf /usr/bin/nodejs /usr/local/bin/node  # node symlink
-
-# REMOVE ANY EXISTING NGINX
-sudo apt-get purge nginx nginx-full nginx-light nginx-naxsi nginx-common
-sudo rm -rf /etc/nginx
-
-# INSTALL RVM
-\curl -sSL https://get.rvm.io | sudo bash -s -- --version latest --auto-dotfiles
-# source /etc/profile.d/rvm.sh
-# /bin/bash --login
+sudo usermod -a -G rvm `whoami`
 rvmsudo cleanup all
 
 # install some rubies and dependencies for Passenger here
 # ... we are commiting this change right now to see if we need to do something here
 # ... we will find out by looking at the travis-ci build
 # here i make and switch users
-sudo usermod -a -G rvm `whoami`
 if sudo grep -q secure_path /etc/sudoers; then sudo sh -c "echo export rvmsudo_secure_path=1 >> /etc/profile.d/rvm_secure_path.sh" && echo Environment variable installed; fi
 if sudo grep -q secure_path /etc/sudoers; then export rvmsudo_secure_path=1; fi
 
 rvm reinstall ruby-2.3.3
+
 rvm --default use ruby-2.3.3
 
 gem install bundler --no-rdoc --no-ri
