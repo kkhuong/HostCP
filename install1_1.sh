@@ -2,7 +2,7 @@
 
 # INSTALL DEPENDENCIES
 sudo apt-get update
-sudo apt-get install -y make cmake g++ libcurl4-openssl-dev libssl-dev zlib1g-dev nodejs postgresql postgresql-contrib
+sudo apt-get install -y make cmake g++ libcurl4-openssl-dev libssl-dev zlib1g-dev nodejs postgresql postgresql-contrib python-psycopg2 libpq-dev
 sudo ln -sf /usr/bin/nodejs /usr/local/bin/node  # node symlink
 
 # REMOVE ANY EXISTING NGINX
