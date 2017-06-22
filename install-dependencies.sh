@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # sudo useradd -m -p $(openssl passwd -1 -salt SALT TEMP_PASSWORD) -s /bin/bash kkhuong
 # sudo usermod -aG sudo kkhuong
 # sudo echo "kkhuong ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.tmp
@@ -15,9 +16,10 @@ sudo apt-get purge nginx nginx-full nginx-light nginx-naxsi nginx-common
 sudo rm -rf /etc/nginx
 
 # INSTALL RVM
-\curl -sSL https://get.rvm.io | sudo bash -s -- --version latest
-source /etc/profile.d/rvm.sh
-/bin/bash --login
+\curl -sSL https://get.rvm.io | sudo bash -s -- --version latest --auto-dotfiles
+# source /etc/profile.d/rvm.sh
+# /bin/bash --login
+rvmsudo cleanup all
 
 # install some rubies and dependencies for Passenger here
 # ... we are commiting this change right now to see if we need to do something here
@@ -38,8 +40,6 @@ gem install passenger --no-rdoc --no-ri
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor
 
 
-
-# EOF
 # make admin user
 # add admin user to rvm group: sudo usermod -a -G rvm USER
 # have the user install every single rubies
