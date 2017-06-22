@@ -33,3 +33,8 @@ Errors Encountered
 We managed to get a demo app (omrails) up and running. However, note that we have encountered many errors:
 - `development` environment is not the same as `production`. Ergo, something that may work with `passenger start` may not work. Encourage the customer to do `passenger start ...` to launch app as production before deploying for real because they do not have access to the error logs and the webpage does not show any error (unlike PHP in "development mode"). Example errors is that: syntax error on a production code but not on development code, production requires other software such as postgres (opposing sqlite for dev mode), `SECRET_KEY_BASE`
 - [X] Most of the time, error stems from forgeting to set the `SECRET_KEY_BASE`. We shall declare `SECRET_KEY_BASE` as an environmental variable to reduce deployment errors. We should remind the customers to generate and set their own though.
+
+LEMP Stack
+==========
+We are now working on the LEMP Stack support. We will document our process here so that we can later work it into the installation scripts.
+- [ ] Install `mysql-server` thru `sudo apt-get install mysql-server`. It will prompt the person running the command to enter a password for the root user for the database. **ALWAYS ALWAYS ALWAYS remember to find a way to automate this when possible.** (*Milestone 2*)
