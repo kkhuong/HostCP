@@ -1,13 +1,11 @@
 Zeroeth Control Panel
 =====================
-[![Build Status](https://travis-ci.org/kkhuong/ZeroCP.svg?branch=master)](https://travis-ci.org/kkhuong/ZeroCP)
-
 Zeroeth Control Panel, or ZeroCP, is an online web hosting control panel that provides a web-based GUI and automation tools to simplify the process of hosting a website or managing a shared web hosting server. It is designed to be a cPanel alternative for Debian based operating systems, particularly Ubuntu.
 
 
 How to setup
 ------------
-Unfortunately, we do not have an one command installer. Therefore, to use this software, you will need to do the following
+Unfortunately, we do not have an one command installer. Therefore, to use this software, you will need to do the following:
 
 - Login as `root`
 - `./install1.sh`  # this makes `kkhuong` with password `TEMP_PASSWORD`
@@ -35,17 +33,21 @@ Unfortunately, we do not have an one command installer. Therefore, to use this s
 - `sudo chown -R :rvm /usr/local/rvm`  # do this everytime you instlled a new ruby version also do `gem install rails`
 - ** We acknowledge that this is a very insecure world since any customer can simply wipe out the entire ruby directory. However this will ensure it works for now. As a counter measure, we will require a photocopy of the customer's photo id or passport before letting them have shell access for one hour.
 
+We are trying to make this installation generic for all OS and simpler.
 To-Do
 -----
-- [ ] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
+- [X] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
 - [ ] Throw away C++ code
 - [ ] Create new Rails app
 - [ ] Install Postgres SQL. Setup the database and have the Rails app make use of that
-- [ ] Update Travis CI configuration to reflect our changes
+- [ ] ~~Update Travis CI configuration to reflect our changes~~
 - [ ] Get the app to take in simple commands to create new Unix user
 - [ ] Write a simple test to check if number of users is 1 after the first insert
-- [ ] Update Travis CI configuration to reflect our changes
-- [X] Learn how to work with sockets to open up a port
+- [ ] ~~Update Travis CI configuration to reflect our changes~~
+- [X] ~~Learn how to work with sockets to open up a port~~
+- [ ] Figure out how to have multiple version PHP support
+- [ ] Possibly generalize installation for all OS
+- [ ] Demo app for every version programming language
 
 
 Development Process
@@ -58,16 +60,17 @@ Testing
 ZeroCP is still in the pre-development phrase. However, we will occasionally write new [tests](test/) for ZeroCP.
 
 ### Unit Tests
-
 Unit test for new code, will be added as needed. Unit tests can be compiled and run
 (assuming they weren't disabled in configure) with: `make check`.
 
 ### Integration Tests
-
 There are also integration tests, written
 in Python, that are run automatically on the build server.
 
-The Travis CI system makes sure that every push to the `master` branch is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+~~The Travis CI system makes sure that every push to the `master` branch is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.~~ **We are no longer using Travis-CI**
+
+### Regression Tests
+Regression tests are performed very often. They are performed after every small iteration of this software development.
 
 Implementation Remarks
 ----------------------
