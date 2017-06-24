@@ -31,9 +31,10 @@ Unfortunately, we do not have an one command installer. Therefore, to use this s
 
 - Login as `kkhuong`
 - `sudo chown -R :rvm /usr/local/rvm`  # do this everytime you instlled a new ruby version also do `gem install rails`
-- ** We acknowledge that this is a very insecure world since any customer can simply wipe out the entire ruby directory. However this will ensure it works for now. As a counter measure, we will require a photocopy of the customer's photo id or passport before letting them have shell access for one hour.
+- ** We acknowledge that this is a very insecure world since any customer can simply wipe out the entire ruby directory. However this will ensure it works for now. As a counter measure, we will require a photocopy of the customer's photo id or passport before letting them have shell access for one hour.**
 
 We are trying to make this installation generic for all OS and simpler.
+
 To-Do
 -----
 - [X] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
