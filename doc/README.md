@@ -54,3 +54,4 @@ apt-get install php-amqp php-amqplib php-analog php-apigen php-apigen-theme-boot
   - [ ] Restart NGINX. Now everything should be up and running. Can easily test with a simple `<?php phpinfo(); ?>` script.
   
   - [ ] NOW: **Look into support for other PHP versions such as 4.4 (legacy), 5.4, 5.5, 5.6** Have PHP 7 as default and discourage users from using PHP4.4.
+  ![PHP Mods](https://raw.githubusercontent.com/kkhuong/ZeroCP/master/doc/php_essentials.png)
