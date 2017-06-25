@@ -8,26 +8,28 @@ How to setup
 Unfortunately, we do not have an one command installer. Therefore, to use this software, you will need to do the following:
 
 - Login as `root`
-- `./install1.sh`  # this makes `kkhuong` with password `TEMP_PASSWORD`
-- Logout
+  - `./install1.sh`  # this makes `kkhuong` with password `TEMP_PASSWORD`
+  - Logout
 
 - Login as `kkhuong`
-- `./install1_1.sh`  # this install dependencies and rvm
-- Logout
+  - `sudo apt-get install mysql-server`
+  - `sudo mysql_secure_installation` and then `THE_PASSWORD_ENTERED n n y y y y`
+  - `./install1_1.sh`  # this install dependencies and rvm
+  - Logout
 
 - Login as `kkhuong`
-- `./install2.sh`
-- Logout
+  - `./install2.sh`
+  - Logout
 
 - Login as `adminuser` with password `TEMP_PASSWORD`
-- `rvm reinstall ruby-2.3.3`
-- `rvm --default use ruby-2.3.3`
-- `./install2_1.sh`
-- Logout
+  - `rvm reinstall ruby-2.3.3`
+  - `rvm --default use ruby-2.3.3`
+  - `./install2_1.sh`
+  - Logout
 
 - Login as `root`
-- `./install3.sh`
-- Logout
+  - `./install3.sh`
+  - Logout
 
 - Login as `kkhuong`
 - `sudo chown -R :rvm /usr/local/rvm`  # do this everytime you instlled a new ruby version also do `gem install rails`
