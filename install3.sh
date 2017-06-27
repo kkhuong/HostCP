@@ -25,5 +25,7 @@ sudo systemctl restart php7.0-fpm.service
 sudo mkdir /opt/nginx/sites-available
 sudo ln -s /opt/nginx/sites-available /opt/nginx/sites-enabled
 sudo cp -f misc/conf/nginx.conf /opt/nginx/conf/nginx.conf
+cd /opt/nginx/sites-enabled/  # here we are just making sure that if the user runs this script twice, we would not have created symlink twice thus creating error
+sudo rm -f sites-available
 sudo kill $(cat /opt/nginx/logs/nginx.pid)  # here we restart nginx
 sudo /opt/nginx/sbin/nginx
