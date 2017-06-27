@@ -17,8 +17,8 @@ sudo cp -r misc/skeleton/. /etc/skel/
 
 # "configure" php
 sudo cp -f misc/conf/php5.6-fpm.www.conf /etc/php/5.6/fpm/pool.d/www.conf
-sudo systemctl restart php5.6-fpm.service
 sudo cp -f misc/conf/php7.0-fpm.www.conf /etc/php/7.0/fpm/pool.d/www.conf
+sudo systemctl restart php5.6-fpm.service
 sudo systemctl restart php7.0-fpm.service
 
 # "configure" nginx
