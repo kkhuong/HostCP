@@ -24,6 +24,6 @@ sudo systemctl restart php7.0-fpm.service
 # "configure" nginx
 sudo mkdir /opt/nginx/sites-available
 sudo ln -s /opt/nginx/sites-available /opt/nginx/sites-enabled
-sudo cp -f misc/conf/nginx.conf /opt/nginx/nginx.conf
+sudo cp -f misc/conf/nginx.conf /opt/nginx/conf/nginx.conf
 sudo kill $(cat /opt/nginx/logs/nginx.pid)  # here we restart nginx
 sudo /opt/nginx/sbin/nginx
