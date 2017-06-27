@@ -12,5 +12,6 @@ sudo apt-get install -y php5.6-cgi php5.6-cli php5.6-phpdbg php5.6-fpm libphp5.6
 sudo apt-get purge nginx nginx-full nginx-light nginx-naxsi nginx-common
 sudo rm -rf /etc/nginx
 
-# INSTALL RVM
+# INSTALL RVM (force)
+command curl -sSL https://rvm.io/mpapis.asc | sudo gpg2 --import -
 \curl -sSL https://get.rvm.io | sudo bash -s -- --version latest --auto-dotfiles
