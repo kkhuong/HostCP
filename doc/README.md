@@ -44,7 +44,7 @@ We will list the steps in a high level description below on how to setup the LEM
 - [X] Get PHP to work with NGINX
   - [X] Edit the php5.6-fpm configuration file `/etc/php/5.6/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9000`
   - [X] Edit the php7.0-fpm configuration file `/etc/php/7.0/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9001`
-  - [ ] Restart php5.6-fpm using the command `sudo systemctl restart php5.6-fpm.service`
+  - [X] Restart php5.6-fpm using the command `sudo systemctl restart php5.6-fpm.service`
   - [X] Restart php7.0-fpm using the command `sudo systemctl restart php7.0-fpm.service`
   - [X] ~~In NGINX configuration files, update lines with `fastcgi_pass` to `fastcgi_pass   127.0.0.1:9000;` (for PHP5.6) - test only~~
   - [X] ~~Also update `fastcgi_param  SCRIPT_FILENAME` to `fastcgi_param  SCRIPT_FILENAME  __HOME_PATH__$fastcgi_script_name;`. Replace `__HOME_PATH__` with the root directory of the project --- exclude the trailing slash.~~ (Automate this)

@@ -39,15 +39,16 @@ We are trying to make this installation generic for all OS and simpler. We will 
 To-Do
 -----
 - [X] Update `install-dependencies.sh` to copy user default files to `/etc/skel`
-- [ ] Throw away C++ code
-- [ ] Create new Rails app
-- [ ] Install Postgres SQL. Setup the database and have the Rails app make use of that
+- [X] Throw away C++ code
+- [X] Create new Rails app
+- [X] Install Postgres SQL (*Done with installation*)
+- [ ] Setup the database and have the Rails app make use of that
 - [ ] ~~Update Travis CI configuration to reflect our changes~~
 - [ ] Get the app to take in simple commands to create new Unix user
 - [ ] Write a simple test to check if number of users is 1 after the first insert
 - [ ] ~~Update Travis CI configuration to reflect our changes~~
 - [X] ~~Learn how to work with sockets to open up a port~~
-- [ ] Figure out how to have multiple version PHP support
+- [X] Figure out how to have multiple version PHP support
 - [ ] Possibly generalize installation for all OS
 - [ ] Demo app for every version programming language
 
