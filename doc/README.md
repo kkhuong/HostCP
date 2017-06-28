@@ -40,15 +40,15 @@ LEMP Stack (Now slightly automated + 5.6 support)
 -------------------------------------------------
 We will list the steps in a high level description below on how to setup the LEMP Stack. Checkmark will denote that the step has been taken care of by the installation scripts.
 
-- [ ] Follow the "installation" instructions. You should then have PHP 5.6, 7.0 + NGINX + MySQL installed
-- [ ] Get PHP to work with NGINX
-  - [ ] Edit the php5.6-fpm configuration file `/etc/php/5.6/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9000`
-  - [ ] Edit the php7.0-fpm configuration file `/etc/php/7.0/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9001`
+- [X] Follow the "installation" instructions. You should then have PHP 5.6, 7.0 + NGINX + MySQL installed
+- [X] Get PHP to work with NGINX
+  - [X] Edit the php5.6-fpm configuration file `/etc/php/5.6/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9000`
+  - [X] Edit the php7.0-fpm configuration file `/etc/php/7.0/fpm/pool.d/www.conf` and change line with `listen` to `listen = 127.0.0.1:9001`
   - [ ] Restart php5.6-fpm using the command `sudo systemctl restart php5.6-fpm.service`
-  - [ ] Restart php7.0-fpm using the command `sudo systemctl restart php7.0-fpm.service`
-  - [ ] ~~In NGINX configuration files, update lines with `fastcgi_pass` to `fastcgi_pass   127.0.0.1:9000;` (for PHP5.6) - test only~~
-  - [ ] ~~Also update `fastcgi_param  SCRIPT_FILENAME` to `fastcgi_param  SCRIPT_FILENAME  __HOME_PATH__$fastcgi_script_name;`. Replace `__HOME_PATH__` with the root directory of the project --- exclude the trailing slash.~~ (Automate this)
-  - [ ] Restart NGINX. Now everything should be up and running. Can easily test with a simple `<?php phpinfo(); ?>` script.
+  - [X] Restart php7.0-fpm using the command `sudo systemctl restart php7.0-fpm.service`
+  - [X] ~~In NGINX configuration files, update lines with `fastcgi_pass` to `fastcgi_pass   127.0.0.1:9000;` (for PHP5.6) - test only~~
+  - [X] ~~Also update `fastcgi_param  SCRIPT_FILENAME` to `fastcgi_param  SCRIPT_FILENAME  __HOME_PATH__$fastcgi_script_name;`. Replace `__HOME_PATH__` with the root directory of the project --- exclude the trailing slash.~~ (Automate this)
+  - [X] Restart NGINX. Now everything should be up and running. Can easily test with a simple `<?php phpinfo(); ?>` script.
   
   ![PHP Mods](https://raw.githubusercontent.com/kkhuong/ZeroCP/master/doc/php_essentials.png)
 
@@ -56,10 +56,10 @@ We will list the steps in a high level description below on how to setup the LEM
 
 - Most NGINX installations happen in `/etc/nginx`. Withal, our Passenger installation installs NGINX in `/opt/nginx`.
 - Our NGINX is customized to work with Passenger. As a result, installation is different from most online guides. We shall separate "server blocks" from NGINX conf files (i.e. every website hosted on the server has its own conf file). To imitate the Apache setup,
-  - [ ] `mkdir /opt/nginx/sites-available`
-  - [ ] `ln -s /opt/nginx/sites-available /opt/nginx/sites-enabled`. Yes, we acknowledge this is werid but we want to follow the conventions.
-  - [ ] Edit the `http` block inside `/opt/nginx/nginx.conf` and add this line
+  - [X] `mkdir /opt/nginx/sites-available`
+  - [X] `ln -s /opt/nginx/sites-available /opt/nginx/sites-enabled`. Yes, we acknowledge this is werid but we want to follow the conventions.
+  - [X] Edit the `http` block inside `/opt/nginx/nginx.conf` and add this line
     ```
     include /opt/nginx/sites-enabled/*;
     ```
-  - [ ] Put conf files into `/opt/nginx/sites-available` and restart NGINX
+  - [X] Put conf files into `/opt/nginx/sites-available` and restart NGINX

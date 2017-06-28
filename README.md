@@ -55,6 +55,13 @@ Development Process
 -------------------
 The `master` branch contains the latest code that has been written. It is regularly built and tested, but is not guaranteed to be completely stable. [Tags](https://github.com/kkhuong/ZeroCP/tags) are created to indicate a stable version of ZeroCP.
 
+A version number consists of three incremented integer value, separated by periods (.). `Major.Minor.Build`
+
+- **Major values** represent sets of new features. It is often the most imprtant number.
+- **Minor values** represent sets of bug fixes and changes that stabilize the features that we released in a major value version.
+  - **Initial** build of a production release use a minor and build value of 0 (e.g. v1.0.0).
+  - Subsequent publications of the production release will increment the build value (e.g. v1.0.1).
+- **Build values** represent a unique build of this software.
 
 Testing
 -------
