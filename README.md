@@ -32,9 +32,9 @@ Unfortunately, we do not have an one command installer. Therefore, to use this s
   - Logout
 
 - Login as `kkhuong`
-  - `sudo chown -R :rvm /usr/local/rvm`  # do this everytime you instlled a new ruby version also do `gem install rails`
+  - `sudo chmod -R 777 /usr/local/rvm`  # do this everytime you instlled a new ruby version also do `gem install rails`
 
-We are trying to make this installation generic for all OS and simpler.
+We are trying to make this installation generic for all OS and simpler. We will secure the ruby installation later.
 
 To-Do
 -----
