@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# CREATE A SWAPFILE FOR NGINX COMPILATION
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048k
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
 # INSTALL PASSENGER + NGINX
 rvmsudo gem install passenger --no-rdoc --no-ri
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx --languages ruby,python,nodejs,meteor
