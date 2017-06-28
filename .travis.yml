@@ -1,5 +1,11 @@
 language: ruby
 rvm:
   - 2.3.3
+before_install:
+  - gem install rake
+  - gem install rack
+  - gem install rails
+  - gem install bundle
 before_script:
   - cd src/
+
