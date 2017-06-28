@@ -1,4 +1,8 @@
 language: ruby
+os:
+  - linux
+  - osx
+  - trusty
 rvm:
   - 2.3.3
 before_install:
@@ -6,6 +10,8 @@ before_install:
   - gem install rack
   - gem install rails
   - gem install bundle
+install:
+  - bundle install
 before_script:
   - cd src/
 
