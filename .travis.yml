@@ -1,16 +1,5 @@
-sudo: enabled
-dist: trusty
-os: linux
-language: generic
-
-install:
-  - sh install1.sh
-  - /bin/bash --login
-  - sh install2.sh
-  - rvm --default use ruby-2.3.3
-  - sh install3.sh
+language: ruby
+rvm:
+  - 2.3.3
+before_script:
   - cd src/
-  - make
-
-after_install:
-  - make clean
