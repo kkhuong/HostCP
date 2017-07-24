@@ -24,6 +24,7 @@ Milestone 1.0 will consist of a API (JSON) system only. It will support these fe
   - Pseudo-add new domain
   - Points domain to a "language" such as PHP (recommended) or ROR
   - Preview the "app" hosted (perhaps a port)
+- Really install every version of Ruby for now. It appears that some Ruby gems require only some strict version. Also change RVM to Mixed Mode.
   
 - Overview
   - For every app hosted, edit NGINX conf files `/opt/nginx/conf/nginx.conf` accordingly
@@ -63,3 +64,5 @@ We will list the steps in a high level description below on how to setup the LEM
     include /opt/nginx/sites-enabled/*;
     ```
   - [X] Put conf files into `/opt/nginx/sites-available` and restart NGINX
+  
+
